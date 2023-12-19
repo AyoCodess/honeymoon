@@ -1,4 +1,5 @@
 import { ExpoConfig, ConfigContext } from "@expo/config";
+import packageJson from "./package.json";
 
 const CLERK_PUBLISHABLE_KEY =
   "pk_test_c3F1YXJlLWdyaXp6bHktODQuY2xlcmsuYWNjb3VudHMuZGV2JA";
@@ -6,7 +7,8 @@ const CLERK_PUBLISHABLE_KEY =
 const defineConfig = (_ctx: ConfigContext): ExpoConfig => ({
   name: "expo",
   slug: "expo",
-  version: "1.0.0",
+  scheme: "com.honeymoon.app",
+  version: packageJson.version,
   orientation: "portrait",
   icon: "./assets/icon.png",
   userInterfaceStyle: "light",
@@ -21,7 +23,7 @@ const defineConfig = (_ctx: ConfigContext): ExpoConfig => ({
   assetBundlePatterns: ["**/*"],
   ios: {
     supportsTablet: true,
-    bundleIdentifier: "your.bundle.identifier",
+    bundleIdentifier: "com.honeymoon.app",
   },
   android: {
     adaptiveIcon: {
@@ -31,7 +33,8 @@ const defineConfig = (_ctx: ConfigContext): ExpoConfig => ({
   },
   extra: {
     eas: {
-      projectId: "your-project-id",
+      projectId: "3e52cf18-0ec2-42e5-b827-c9597358b8f0",
+      owner: "ayocodes",
     },
     CLERK_PUBLISHABLE_KEY,
   },
