@@ -1,5 +1,5 @@
 import { ExpoConfig, ConfigContext } from "@expo/config";
-import packageJson from "./package.json";
+import packageJson from "../expo/package.json";
 
 const CLERK_PUBLISHABLE_KEY =
   "pk_test_c3F1YXJlLWdyaXp6bHktODQuY2xlcmsuYWNjb3VudHMuZGV2JA";
