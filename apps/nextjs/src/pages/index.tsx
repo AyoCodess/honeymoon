@@ -20,7 +20,7 @@ import Link from "next/link";
 // };
 
 const Home: NextPage = () => {
-  const postQuery = trpc.post.all.useQuery();
+  // const postQuery = trpc.post.all.useQuery();
 
   return (
     <>
