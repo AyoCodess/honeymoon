@@ -4,12 +4,15 @@ import type { AppType } from "next/app";
 import { ClerkProvider } from "@clerk/nextjs";
 import { trpc } from "../utils/trpc";
 
-const MyApp: AppType = ({ Component, pageProps: { ...pageProps } }) => {
+const MyApp: AppType = ({ Component,pageProps: { ...pageProps } }) => {
   return (
+
     <ClerkProvider {...pageProps}>
-      <Component {...pageProps} />
+      {(Component as React.ComponentType<unknown>)(pageProps)}
     </ClerkProvider>
   );
 };
+
+
 
 export default trpc.withTRPC(MyApp);
