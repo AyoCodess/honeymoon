@@ -1,21 +1,25 @@
 {
   "name": "@acme/db",
   "version": "0.1.0",
-  "main": "./index.ts",
-  "types": "./index.ts",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
   "license": "MIT",
   "scripts": {
-    "clean": "rm -rf .turbo node_modules",
-    "with-env": "dotenv -e ../../.env --",
-    "dev": "pnpm with-env prisma studio --port 5556",
-    "db-push": "pnpm with-env prisma db push",
-    "db-generate": "pnpm with-env prisma generate"
+    "check": "drizzle-kit check:mysql --config ./drizzle.config.ts",
+    "generate": "drizzle-kit generate:mysql --config ./drizzle.config.ts",
+    "push": "drizzle-kit push:mysql --config ./drizzle.config.ts",
+    "studio": "drizzle-kit studio",
+    "gp": "drizzle-kit generate:mysql --config ./drizzle.config.ts && drizzle-kit push:mysql --config ./drizzle.config.ts"
   },
   "dependencies": {
-    "@prisma/client": "^4.6.1"
+    "@planetscale/database": "^1.13.0",
+    "@prisma/client": "^4.6.1",
+    "drizzle-orm": "^0.29.1",
+    "mysql2": "^3.6.5"
   },
   "devDependencies": {
     "dotenv-cli": "^6.0.0",
+    "drizzle-kit": "^0.20.7",
     "prisma": "^4.6.1",
     "typescript": "^4.9.3"
   }
