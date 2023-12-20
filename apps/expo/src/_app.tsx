@@ -5,9 +5,10 @@ import { TRPCProvider } from "./utils/trpc";
 
 import { HomeScreen } from "./screens/home";
 import { SignInSignUpScreen } from "./screens/signin";
-import { ClerkProvider, SignedIn, SignedOut } from "@clerk/clerk-expo";
+import { ClerkProvider,SignedIn,SignedOut } from "@clerk/clerk-expo";
 import { tokenCache } from "./utils/cache";
 import Constants from "expo-constants";
+
 
 export const App = () => {
   return (

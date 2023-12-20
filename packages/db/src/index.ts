@@ -1,3 +1,5 @@
+// for planetscale
+
 // import { drizzle } from "drizzle-orm/planetscale-serverless";
 // import { connect } from "@planetscale/database";
 // import "dotenv/config";

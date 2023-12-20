@@ -7,9 +7,13 @@
 
 /** @type {import("next").NextConfig} */
 const config = {
+  webpack(config) {
+    config.experiments = { ...config.experiments,topLevelAwait: true }
+    return config
+  },
   reactStrictMode: true,
   swcMinify: true,
-  transpilePackages: ["@acme/api", "@acme/db"],
+  transpilePackages: ["@acme/api","@acme/db"],
   // We already do linting on GH actions
   eslint: {
     ignoreDuringBuilds: !!process.env.CI,
